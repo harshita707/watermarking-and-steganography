@@ -3,7 +3,7 @@
 
     <!--View Titles-->
     <string name="select_image_title">Select Cover Image</string>
-    <string name="stego_image_title">Result Image</string>
+    <string name="stego_image_title">Result Image!</string>
     <string name="decrypt_result_title">Secret Message</string>
     <string name="secret_message_title">Secret Message Type</string>
     <string name="rb_secret_text">Text</string>
@@ -61,5 +61,23 @@
 
     <string name="slide_4_title">Warning</string>
     <string name="slide_4_desc">Do not share images via WhatsApp or Facebook because these apps compresses images which leads to loss of encoded message</string>
-    <string name="key">Key...</string>
+    <string name="key">Key…</string>
+    <string name="welcome_users">Welcome Users!</string>
+    <string name="text_in_image_stego">Text in\nImage\nSteganography</string>
+    <string name="image_in_image_stego">Image in\nImage\nSteganography</string>
+    <string name="decode_stego">Decode \nSteganography</string>
+    <string name="text_image_stego">Text in Image Stego!</string>
+    <string name="select_cover_image">Select Cover Image…</string>
+    <string name="enter_secret_message">Enter Secret Message…</string>
+    <string name="type_your_secrete_message_here">Type your secrete message here</string>
+    <string name="secret_image">secret image</string>
+    <string name="enter_message_key">Enter Secret Key…</string>
+    <string name="type_your_secrete_key_here">Type your secrete key here…</string>
+    <string name="image_stego">Image in Image Stego!</string>
+    <string name="select_secret_image">Select Secret Image…</string>
+    <string name="encrypt">Encrypt</string>
+    <string name="decode_steganography">Decode Steganography!</string>
+    <string name="select_decode_image">Select Decode Image...</string>
+    <string name="decrypt_the_secrete_image">Decrypt the secrete image</string>
+    <string name="here_is_the_result_of_your_decryption">Here is the result of your Decryption...</string>
 </resources>

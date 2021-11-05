@@ -1,72 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:fillViewport="true"
-    app:layout_constraintTop_toBottomOf="parent"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-  <androidx.constraintlayout.widget.ConstraintLayout
-      android:id="@+id/activity_encrypt"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:fitsSystemWindows="true"
-      tools:context=".activities.decrypt.DecryptResultActivity">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:fillViewport="true">
+
 
     <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:id="@+id/activity_encrypt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="20dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:orientation="vertical">
 
-      <TextView
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_gravity="center"
-          android:layout_marginBottom="40dp"
-          android:fontFamily="serif"
-          android:paddingTop="3dp"
-          android:paddingBottom="5dp"
-          android:text="Here is the result of your decryption"
-          android:textAlignment="center"
-          android:textAllCaps="true"
-          android:textSize="24sp"
-          android:textStyle="bold" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/here_is_the_result_of_your_decryption"
+            android:textColor="@color/white"
+            android:textSize="32sp"
+            android:textStyle="bold" />
 
-      <TextView
-          android:id="@+id/tvSecretMessage"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_gravity="center"
-          android:fontFamily="serif"
-          android:paddingTop="2dp"
-          android:text=""
-          android:textSize="18sp" />
 
-      <ImageView
-          android:id="@+id/ivSecretImage"
-          android:layout_width="match_parent"
-          android:layout_height="300dp"
-          android:layout_marginBottom="30dp"
-          android:baselineAlignBottom="false"
-          android:contentDescription="@string/decrypt_result_title"
-          android:layout_gravity="center"
-          android:visibility="gone"
-          app:srcCompat="@drawable/ic_file_upload"
-          tools:ignore="VectorDrawableCompat" />
+        <TextView
+            android:id="@+id/tvSecretMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingTop="2dp"
+            android:text=""
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/ivSecretImage"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="30dp"
+            android:baselineAlignBottom="false"
+            android:contentDescription="@string/decrypt_result_title"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_file_upload"
+            tools:ignore="VectorDrawableCompat" />
     </LinearLayout>
-  </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
