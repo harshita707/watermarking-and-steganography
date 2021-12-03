@@ -61,6 +61,7 @@ public class DecryptResultActivity extends AppCompatActivity {
       } catch (Exception e) {
         Toast.makeText(this, "Wrong password", Toast.LENGTH_SHORT).show();
         e.printStackTrace();
+        decryptText = "[Wrong password entered, please try again]";
       }
       if(decryptText !=null ) {
         Toast.makeText(this, R.string.decrypt_success, Toast.LENGTH_SHORT).show();

@@ -75,7 +75,7 @@ class DecryptPresenterImpl implements DecryptPresenter, DecryptInteractorImpl.De
   }
 
   private String storeSecretImage(Bitmap secretImage) {
-    String path = Environment.getExternalStorageDirectory() + File.separator + "CryptoMessenger";
+    String path = Environment.getExternalStorageDirectory() + File.separator + "ImageStego";
 
     File folder = new File(path);
     File file = null;

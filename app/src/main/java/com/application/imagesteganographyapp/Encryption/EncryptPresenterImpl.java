@@ -53,7 +53,7 @@ class EncryptPresenterImpl implements EncryptPresenter, EncryptInteractorImpl.En
     //Should be false so that set pixels are not pre-multiplied by alpha value
     scaledBitmap.setPremultiplied(false);
 
-    String path = Environment.getExternalStorageDirectory() + File.separator + "CryptoMessenger";
+    String path = Environment.getExternalStorageDirectory() + File.separator + "ImageStego";
 
     File folder = new File(path);
 
@@ -107,7 +107,7 @@ class EncryptPresenterImpl implements EncryptPresenter, EncryptInteractorImpl.En
     //Should be false so that set pixels are not pre-multiplied by alpha value
     scaledBitmap.setPremultiplied(false);
 
-    String path = Environment.getExternalStorageDirectory() + File.separator + "CryptoMessenger";
+    String path = Environment.getExternalStorageDirectory() + File.separator + "ImageStego";
     File folder = new File(path);
 
     String photoName = getPhotoName(whichImage);
@@ -250,7 +250,7 @@ class EncryptPresenterImpl implements EncryptPresenter, EncryptInteractorImpl.En
   }
 
   private String storeStegoImage(Bitmap stegoImage) {
-    String path = Environment.getExternalStorageDirectory() + File.separator + "CryptoMessenger";
+    String path = Environment.getExternalStorageDirectory() + File.separator + "ImageStego";
 
     File folder = new File(path);
     File file = null;

@@ -70,7 +70,7 @@
             android:textSize="25sp" />
 
         <EditText
-            android:id="@+id/etSecretMessage"
+            android:id="@+id/etSecretKeyImage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints="none"

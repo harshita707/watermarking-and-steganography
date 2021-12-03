@@ -124,11 +124,12 @@ public class EncryptActivity extends AppCompatActivity implements EncryptView {
             } else if (secretMessageType == Constants.TYPE_TEXT) {
                 String text = getSecretMessage();
 
-                if (!text.isEmpty()) {
+                if (text != null) {
                     mPresenter.encryptText();
-                } else {
-                    showToast(R.string.secret_text_empty);
                 }
+//                else {
+//                    showToast(R.string.secret_text_empty);
+//                }
             }
         }
 
@@ -302,6 +303,7 @@ public class EncryptActivity extends AppCompatActivity implements EncryptView {
             Intent intent = new Intent(EncryptActivity.this, StegoActivity.class);
             intent.putExtra(Constants.EXTRA_STEGO_IMAGE_PATH, filePath);
             startActivity(intent);
+            finish();
         }
 
         @Override
@@ -349,11 +351,18 @@ public class EncryptActivity extends AppCompatActivity implements EncryptView {
             String inputText = etSecretMessage.getText().toString().trim();
             String key = etSecretKey.getText().toString().trim();
             String outputText = null;
-            try {
-                outputText = AESencryption.encryptText(inputText, key);
-            } catch (Exception e) {
-                e.printStackTrace();
+            if(inputText.isEmpty()){
+                Toast.makeText(this, "Enter a secret text!!", Toast.LENGTH_SHORT).show();
+            } else if (key.isEmpty()){
+                Toast.makeText(this, "Enter a key!!", Toast.LENGTH_SHORT).show();
+            } else {
+                try {
+                    outputText = AESencryption.encryptText(inputText, key);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
+
             return outputText;
         }
 

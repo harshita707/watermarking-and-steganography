@@ -39,8 +39,9 @@ import butterknife.OnClick;
 
 public class EncryptImageActivity extends AppCompatActivity implements EncryptView {
 
-    @BindView(R.id.etSecretMessage)
+    @BindView(R.id.etSecretKeyImage)
     EditText etSecretMessage;
+
     @BindView(R.id.ivCoverImage)
     ImageView ivCoverImage;
     @BindView(R.id.ivSecretImage)
@@ -126,14 +127,19 @@ public class EncryptImageActivity extends AppCompatActivity implements EncryptVi
     @OnClick(R.id.bEncrypt)
     public void onButtonClick() {
         if (secretMessageType == Constants.TYPE_IMAGE) {
-            mPresenter.encryptImage();
+            String text = getSecretMessage();
+            if (!text.isEmpty()) {
+                mPresenter.encryptImage();
+            } else {
+                showToast(R.string.secret_text_empty);
+            }
         } else if (secretMessageType == Constants.TYPE_TEXT) {
             String text = getSecretMessage();
 
             if (!text.isEmpty()) {
                 mPresenter.encryptText();
             } else {
-                showToast(R.string.secret_text_empty);
+                showToast(R.string.secret_key_empty);
             }
         }
     }
@@ -255,6 +261,7 @@ public class EncryptImageActivity extends AppCompatActivity implements EncryptVi
         Intent intent = new Intent(EncryptImageActivity.this, StegoActivity.class);
         intent.putExtra(Constants.EXTRA_STEGO_IMAGE_PATH, filePath);
         startActivity(intent);
+        finish();
     }
 
     @Override
@@ -282,7 +289,13 @@ public class EncryptImageActivity extends AppCompatActivity implements EncryptVi
     @Override
     public Bitmap getSecretImage() {
 
-        return ((BitmapDrawable) ivSecretImage.getDrawable()).getBitmap();
+        try {
+            return ((BitmapDrawable) ivSecretImage.getDrawable()).getBitmap();
+
+        } catch (Exception e){
+            showToast(R.string.secret_image_empty);
+            return null;
+        }
     }
 
     @Override
@@ -299,6 +312,9 @@ public class EncryptImageActivity extends AppCompatActivity implements EncryptVi
 
     @Override
     public String getSecretMessage() {
+        if(etSecretMessage.getText().toString().isEmpty()){
+            return "";
+        }
         return etSecretMessage.getText().toString().trim();
     }
 

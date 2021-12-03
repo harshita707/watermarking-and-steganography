@@ -33,6 +33,7 @@
     <string name="stego_image_not_selected">Stego Image is not selected !</string>
     <string name="non_stego_image_selected">Selected image is not a proper Stego Image</string>
     <string name="secret_text_empty">Text field is empty !</string>
+    <string name="secret_key_empty">Key field is empty !</string>
 
     <!--welcome activity-->
     <string name="encode_button">Encode</string>
@@ -77,7 +78,7 @@
     <string name="select_secret_image">Select Secret Image…</string>
     <string name="encrypt">Encrypt</string>
     <string name="decode_steganography">Decode Steganography!</string>
-    <string name="select_decode_image">Select Decode Image...</string>
+    <string name="select_decode_image">Select Decode Image…</string>
     <string name="decrypt_the_secrete_image">Decrypt the secrete image</string>
-    <string name="here_is_the_result_of_your_decryption">Here is the result of your Decryption...</string>
+    <string name="here_is_the_result_of_your_decryption">Here is the result of your Decryption…</string>
 </resources>
